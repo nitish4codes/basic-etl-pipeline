@@ -19,3 +19,5 @@ To understand basic data engineering concepts and data processing workflow.
 ## 🚀 Output:
 - Cleaned dataset
 - Stored data in database for querying
+
+•	“Future improvement: automate pipeline using scheduling tools”
