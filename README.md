@@ -25,7 +25,7 @@ Developed an automated **ETL (Extract, Transform, Load)** pipeline to process an
 ## How to Run
 1.  Clone the repository:
     ```bash
-    git clone [https://github.com/nitish4codes/google-play-store-etl-pipeline.git](https://github.com/nitish4codes/google-play-store-etl-pipeline.git)
+    git clone https://github.com/NitishBhardwaj/google-play-store-etl-pipeline.git
     ```
 2.  Install required libraries:
     ```bash
