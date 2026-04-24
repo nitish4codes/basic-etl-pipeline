@@ -2,6 +2,7 @@
 
 ## Project Overview
 Developed an automated **ETL (Extract, Transform, Load)** pipeline to process and analyze over **10,000+ mobile application records** from the Google Play Store. The project demonstrates real-world data engineering skills by handling "messy" formatting, ensuring high data integrity, and implementing structured storage for relational analysis.
+* **Dataset Source:** [Google Play Store Apps (Kaggle)](https://www.kaggle.com/datasets/lava18/google-play-store-apps)
 
 ## Key Features
 * **Data Ingestion**: Automated extraction of raw application data from CSV format using **Pandas**.
