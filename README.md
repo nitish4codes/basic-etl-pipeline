@@ -1,128 +1,37 @@
-# 📊 Google Play Store ETL Pipeline
+# Google Play Store ETL Pipeline
 
-## 🚀 Project Overview
+## Project Overview
+Developed an automated **ETL (Extract, Transform, Load)** pipeline to process and analyze over **10,000+ mobile application records** from the Google Play Store. The project demonstrates real-world data engineering skills by handling "messy" formatting, ensuring high data integrity, and implementing structured storage for relational analysis.
 
-This project implements an automated **ETL (Extract, Transform, Load) pipeline** to process and analyze **10,000+ mobile application records** from the Google Play Store dataset.
+## Key Features
+* **Data Ingestion**: Automated extraction of raw application data from CSV format using **Pandas**.
+* **Advanced Transformation**: Engineered custom cleaning logic to resolve unit inconsistencies (e.g., converting 'M' and 'k' suffixes in file sizes to a uniform byte count).
+* **Data Integrity**: Resolved 100% of formatting discrepancies by stripping special characters ('+', ',') from install counts and currency symbols from pricing.
+* **Structured Storage**: Migrated processed data into a **SQLite** relational database, optimizing it for high-performance querying and long-term data persistence.
 
-The goal is to handle messy, real-world data and convert it into a clean, structured format suitable for analysis and querying.
+## Tech Stack
+* **Language**: Python
+* **Libraries**: Pandas (Data Manipulation), SQLite3 (Database Management)
+* **Tools**: Git, GitHub, VS Code
 
----
+## ETL Workflow
+1.  **Extract**: Reads the raw `googleplaystore.csv` containing diverse mobile app metrics.
+2.  **Transform**: 
+    * Removes duplicate entries and handles missing values to prevent data redundancy.
+    * Normalizes the `Installs` and `Price` columns into computable numeric types (integers/floats).
+    * Converts human-readable `Size` strings (e.g., '19M') into standardized numeric byte values.
+3.  **Load**: Stores the final normalized dataset into a `.db` file for SQL operations and exports a cleaned `.csv` for backup.
 
-## ⚙️ Key Features
-
-### 🔹 Data Ingestion
-
-* Automated extraction of raw dataset records from CSV files using **Pandas**
-
-### 🔹 Advanced Transformation
-
-* Custom data cleaning logic to handle inconsistencies:
-
-  * Converted file sizes with `M` and `k` suffixes into standardized byte values
-  * Normalized mixed-format fields into consistent numerical formats
-
-### 🔹 Data Integrity
-
-* Cleaned and standardized:
-
-  * Removed special characters (`+`, `,`) from install counts
-  * Removed currency symbols from pricing data
-* Ensured **100% formatting consistency**
-
-### 🔹 Structured Storage
-
-* Loaded cleaned data into a **SQLite relational database**
-* Optimized for efficient querying and long-term storage
-* Exported cleaned dataset as a backup CSV file
-
----
-
-## 🛠️ Tech Stack
-
-* **Language:** Python
-* **Libraries:**
-
-  * Pandas (Data Manipulation)
-  * SQLite3 (Database Management)
-* **Tools:** Git, GitHub, VS Code
-
----
-
-## 🔄 ETL Workflow
-
-### 1️⃣ Extract
-
-* Reads raw dataset from `googleplaystore.csv`
-
-### 2️⃣ Transform
-
-* Removes duplicate entries
-* Cleans and standardizes:
-
-  * `Installs` column → numeric format
-  * `Price` column → numeric format
-  * `Size` column → consistent numeric representation
-* Handles missing and inconsistent values
-
-### 3️⃣ Load
-
-* Stores processed data into a `.db` SQLite database
-* Exports cleaned dataset into a `.csv` file for backup
-
----
-
-## ▶️ How to Run
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/nitish4codes/basic-etl-pipeline.git
-cd basic-etl-pipeline
-```
-
-### 2. Install dependencies
-
-```bash
-pip install pandas
-```
-
-### 3. Run the ETL pipeline
-
-```bash
-python etl_script.py
-```
-
----
-
-## 📂 Project Structure
-
-```
-├── googleplaystore.csv     # Raw dataset
-├── cleaned_data.csv        # Processed dataset
-├── database.db             # SQLite database
-├── etl_script.py           # Main ETL pipeline script
-└── README.md               # Project documentation
-```
-
----
-
-## 📈 Future Improvements
-
-* Add data validation checks and logging
-* Integrate visualization dashboards (e.g., Power BI / Tableau)
-* Automate pipeline scheduling (e.g., cron jobs / Airflow)
-* Extend dataset with real-time API integration
-
----
-
-## 🤝 Contributing
-
-Feel free to fork this repository and submit pull requests for improvements.
-
----
-
-## 📜 License
-
-This project is open-source and available under the MIT License.
-
----
+## How to Run
+1.  Clone the repository:
+    ```bash
+    git clone [https://github.com/nitish4codes/google-play-store-etl-pipeline.git](https://github.com/nitish4codes/google-play-store-etl-pipeline.git)
+    ```
+2.  Install required libraries:
+    ```bash
+    pip install pandas
+    ```
+3.  Execute the pipeline:
+    ```bash
+    python etl_pipeline.py
+    ```
